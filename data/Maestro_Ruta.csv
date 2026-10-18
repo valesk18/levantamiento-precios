@@ -1,0 +1,25 @@
+Ruta,Descripcion,Zona_Reporte,PIN_Hash,Departamentos
+MA_101,,MANAGUA,3c2ef1901bee3a4866d68e16de37a270e4f16d166132f14da88b5d0bb5c5a369,"Managua, Carazo, Masaya, León"
+MA_102,,MANAGUA,c89fe5b7a007332d70f5e983d19b73c176c33eb478cff948466163aeff9e3016,"Managua, Masaya"
+MA_103,,MANAGUA,e695386731558526b18b65ec242da656db766549d32502c88dd42a2a796c1029,"Managua, Carazo, León, Masaya"
+MA_104,,MANAGUA,389c8e08359f04c3e38a7a5d64dbade9ab433c7932568920945433bbd3164533,"Managua, Masaya"
+MA_105,,MANAGUA,230c25c9558d98b2fe4543c90c0839051ffed2cb1c1a67e63663d5c8155e0936,Managua
+MA_106,,MANAGUA,0bf85f8f318b0aced9fcb833275ada48bcd5c55128fced65553a76a5a95b01a2,"Managua, Masaya, Granada, León"
+MA_107,,MANAGUA,a93706e865c271f4741a4a5583981818a6697fc88c0b2f15d8781c10eb21e431,"Managua, Masaya, Matagalpa, Río San Juan"
+MA_108,,MANAGUA,f34a56ef21b0d7ab194dbd44d1229bfaa1da20d254863cffb777470507775284,"Managua, Carazo"
+MA_109,,MANAGUA,7cabc7e02461a788af6c61e24d09df8790d9002f6bf614c6c88e5237ccd75011,"Managua, Masaya, Carazo, Rivas"
+MA_110,,MANAGUA,88100ba34db736c9adec9ed7e8e3b56b6379e51f6009841c37a71bfabf8deabf,"Managua, Masaya, Carazo, León, Matagalpa"
+MA_111,,MANAGUA,313cd30d563191516de3d1bf3c203f1afe84f2aaface1665be0fbc07b503f177,Managua
+MA_112,,MANAGUA,9468c114afc20220a94486b82cf437e63a9707c5fb0cb26ec56a8da173762573,Managua
+HORECA_1,,MANAGUA,2c0fbbaee715645fd421fffa56183a4fc7b97c2733de2811c59cb0095811d201,"Managua, Carazo, Masaya, Granada"
+HORECA_2,,MANAGUA,4d0751953578aa574c073abf82aa9cea5ec14e2f3942e2608c27fdd8eee31cc4,"Managua, Masaya, Granada, Chinandega, Carazo, León, Matagalpa, Estelí, Rivas, Nueva Segovia, Chontales, Jinotega, Boaco, RACCN, RACCS, Madriz, Río San Juan"
+CENTRO_01,,"NORTE, CENTRO",1788c74b1c9262866c2071b65df7bfcb7911c2b064c931b580515c2d9d2cd7f8,"Matagalpa, RACCN, Boaco, Chontales, RACCS, Río San Juan, Managua, Jinotega"
+CENTRO_02,,"NORTE, CENTRO",38b8f8f8fc441a717cf6ba41a3e3af6aa5234ac3d23b88e33f7c00209bdedac4,"RACCS, Chontales, Río San Juan, Managua, Boaco, Matagalpa"
+NORTE_01,,"NORTE, CENTRO",aa4b0d224e2b4488c6e3c5692347a0e26322d86dcb6bf01ab937e15d76037ee4,"Estelí, Nueva Segovia, Madriz, Managua, León, Matagalpa, Jinotega"
+NORTE_02,,"NORTE, CENTRO",eec957ed8f011070901be1ea41bed631ba581e488c97730e5b20f0b3fae84c8a,"Matagalpa, Jinotega, RACCN, Boaco, Nueva Segovia"
+MERCADOS_01,,MANAGUA,05d126b39f766147681fb81cf3c0369ebe37f5926abc5f8b75caff5933dc8910,"Managua, León, Chinandega, RACCN, Masaya, Matagalpa"
+MERCADOS_02,,MANAGUA,e5f18bac25227fc0f5615a1af6eaad265dd24d0d82d3a47c4d7f683b61f22f46,"Managua, RACCN, Nueva Segovia"
+OCCIDENTE_01,,"SUR ORIENTE, OCCIDENTE",332d88d62030ed158213fa33b60f3d03a4d2cfccf9a64cd7fa911d96e8cc746e,"Chinandega, León, Managua"
+SURORIENTE_02,,"SUR ORIENTE, OCCIDENTE",55184832e55ea6b71676237031861fcebb0e7ccdad6e19ce27c652c3d0bc71ed,"Rivas, Masaya, Carazo, Granada, Managua"
+OFICINA_01,,MANAGUA,cc3c3b754efdb129d02ab3c0c154a6725f30851ec1c54c018c62997ef2655437,"Managua, Masaya, León, Matagalpa, Chontales, Chinandega, Carazo, Rivas, Granada, Nueva Segovia, Estelí, RACCN, RACCS, Río San Juan"
+SUPER_01,,MANAGUA,453afb3d310def9d21d43098461dcd25b506fe4b760db482b7b524e82b14b5cc,"Managua, Granada, León, Matagalpa, RACCS, Rivas"

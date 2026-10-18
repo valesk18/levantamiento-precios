@@ -1,0 +1,11 @@
+SKU_ID,Producto,Marca,Proveedor,Categoria,Presentacion,Contenido,UM,Precio_Sugerido,Activo
+FAN-001,Salsa de Tomate FANNY Galón,FANNY,SUPLISA,Salsa Tomate,Galón,3785,ml,,Sí
+FAN-002,Salsa de Tomate FANNY Litro,FANNY,SUPLISA,Salsa Tomate,Litro,1000,ml,,Sí
+FAN-003,Salsa Picante FANNY 150 g,FANNY,SUPLISA,Salsa Picantes,150 g,150,g,,Sí
+FAN-004,Salsa Inglesa FANNY 12 oz,FANNY,SUPLISA,Salsa Inglesa,12 oz,355,ml,15.00,Sí
+FAN-005,Salsa China FANNY 6 oz,FANNY,SUPLISA,Salsa China,6 oz,177,ml,15.00,Sí
+FAN-006,Salsa Soya FANNY 6 oz,FANNY,SUPLISA,Salsa Soya,6 oz,177,ml,,Sí
+FAN-007,Vinagre FANNY Galón,FANNY,SUPLISA,Vinagres,Galón,3785,ml,120.00,Sí
+FAN-008,Vinagre FANNY 12 oz,FANNY,SUPLISA,Vinagres,12 oz,355,ml,15.00,Sí
+FAN-009,Vainilla FANNY Galón,FANNY,SUPLISA,Saborizantes,Galón,3785,ml,,Sí
+FAN-010,Vainilla FANNY 12 oz,FANNY,SUPLISA,Saborizantes,12 oz,355,ml,15.00,Sí

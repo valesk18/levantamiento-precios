@@ -1,0 +1,8 @@
+.streamlit/secrets.toml
+data/Registro_Precios.csv
+__pycache__/
+# PIN en texto claro y credenciales: nunca a GitHub
+PINES_*.xlsx
+*.json
+Reporte_Precios_*.xlsx
+~$*

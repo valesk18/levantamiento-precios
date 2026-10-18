@@ -1,0 +1,64 @@
+SKU_ID,Comp_Orden,Comp_ID,Marca,Distribuidor,Producto,Contenido,UM,Activo
+FAN-001,1,FAN-001-C01,Kerns,CDN,Salsa de Tomate Kerns Galón,3785,ml,Sí
+FAN-001,2,FAN-001-C02,Nica,,Salsa de Tomate Nica Galón,3785,ml,Sí
+FAN-001,3,FAN-001-C03,Special,UNIMAR,Salsa de Tomate Special Galón,3785,ml,Sí
+FAN-001,4,FAN-001-C04,Chiltepe,,Salsa de Tomate Chiltepe Galón,3785,ml,Sí
+FAN-001,5,FAN-001-C05,Gourmet,ADIN,Salsa de Tomate Gourmet Galón,3785,ml,Sí
+FAN-001,6,FAN-001-C06,Rey,UNIMAR,Salsa de Tomate Rey Galón,3785,ml,Sí
+FAN-001,7,FAN-001-C07,Banquete,,Salsa de Tomate Banquete Galón,3785,ml,Sí
+FAN-001,8,FAN-001-C08,Briomol,BRIOMOL,Salsa de Tomate Briomol Galón,3785,ml,Sí
+FAN-001,9,FAN-001-C09,Familiar,,Salsa de Tomate Familiar Galón,3785,ml,Sí
+FAN-001,10,FAN-001-C10,Hellmans,,Salsa de Tomate Hellmans Galón,3785,ml,Sí
+FAN-001,11,FAN-001-C11,Procasa,FRACOSA,Salsa de Tomate Procasa Galón,3785,ml,Sí
+FAN-001,12,FAN-001-C12,Regia,DIINSA,Salsa de Tomate Regia Galón,3785,ml,Sí
+FAN-001,13,FAN-001-C13,Valle,,Salsa de Tomate Valle Galón,3785,ml,Sí
+FAN-002,1,FAN-002-C01,Chiltepe,,Salsa de Tomate Chiltepe Litro,1000,ml,Sí
+FAN-002,2,FAN-002-C02,Gourmet,ADIN,Salsa de Tomate Gourmet Litro,1000,ml,Sí
+FAN-002,3,FAN-002-C03,Kerns,CDN,Salsa de Tomate Kerns Litro,1000,ml,Sí
+FAN-002,4,FAN-002-C04,Special,UNIMAR,Salsa de Tomate Special Litro,1000,ml,Sí
+FAN-002,5,FAN-002-C05,Rey,UNIMAR,Salsa de Tomate Rey Litro,1000,ml,Sí
+FAN-002,6,FAN-002-C06,Briomol,BRIOMOL,Salsa de Tomate Briomol Litro,1000,ml,Sí
+FAN-002,7,FAN-002-C07,Familiar,,Salsa de Tomate Familiar Litro,1000,ml,Sí
+FAN-002,8,FAN-002-C08,Nica,,Salsa de Tomate Nica Litro,1000,ml,Sí
+FAN-002,9,FAN-002-C09,Doña Tina,DOÑA TINA,Salsa de Tomate Doña Tina Litro,1000,ml,Sí
+FAN-002,10,FAN-002-C10,Procasa,FRACOSA,Salsa de Tomate Procasa Litro,1000,ml,Sí
+FAN-002,11,FAN-002-C11,Valle,,Salsa de Tomate Valle Litro,1000,ml,Sí
+FAN-003,1,FAN-003-C01,Special,UNIMAR,Salsa Picante Special 150 g,150,g,Sí
+FAN-003,2,FAN-003-C02,Don Julio,OCAL,Salsa Picante Don Julio 150 g,150,g,Sí
+FAN-003,3,FAN-003-C03,Lizano,UNILEVER,Salsa Picante Lizano 130 g,130,g,Sí
+FAN-004,1,FAN-004-C01,Doña Coco,,Salsa Inglesa Doña Coco 12 oz,355,ml,Sí
+FAN-004,2,FAN-004-C02,Nica,,Salsa Inglesa Nica 12 oz,355,ml,Sí
+FAN-004,3,FAN-004-C03,Rey,UNIMAR,Salsa Inglesa Rey 12 oz,355,ml,Sí
+FAN-004,4,FAN-004-C04,Special,UNIMAR,Salsa Inglesa Special 12 oz,355,ml,Sí
+FAN-005,1,FAN-005-C01,Doña Tina,DOÑA TINA,Salsa China Doña Tina 6 oz,177,ml,Sí
+FAN-005,2,FAN-005-C02,Special,UNIMAR,Salsa China Special 6 oz,177,ml,Sí
+FAN-007,1,FAN-007-C01,Nica,,Vinagre Nica Galón,3785,ml,Sí
+FAN-007,2,FAN-007-C02,Rey,UNIMAR,Vinagre Rey Galón,3785,ml,Sí
+FAN-007,3,FAN-007-C03,Special,UNIMAR,Vinagre Special Galón,3785,ml,Sí
+FAN-007,4,FAN-007-C04,Doña Tina,DOÑA TINA,Vinagre Doña Tina Galón,3785,ml,Sí
+FAN-007,5,FAN-007-C05,Valle,,Vinagre Valle Galón,3785,ml,Sí
+FAN-007,6,FAN-007-C06,Familiar,,Vinagre Familiar Galón,3785,ml,Sí
+FAN-007,7,FAN-007-C07,Festin,,Vinagre Festin Galón,3785,ml,Sí
+FAN-007,8,FAN-007-C08,Procasa,FRACOSA,Vinagre Procasa Galón,3785,ml,Sí
+FAN-007,9,FAN-007-C09,Vigo,,Vinagre Vigo Galón,3785,ml,Sí
+FAN-008,1,FAN-008-C01,Special,UNIMAR,Vinagre Special 12 oz,355,ml,Sí
+FAN-008,2,FAN-008-C02,Rey,UNIMAR,Vinagre Rey 12 oz,355,ml,Sí
+FAN-008,3,FAN-008-C03,Nica,,Vinagre Nica 12 oz,355,ml,Sí
+FAN-008,4,FAN-008-C04,Procasa,FRACOSA,Vinagre Procasa 12 oz,355,ml,Sí
+FAN-008,5,FAN-008-C05,Doña Tina,DOÑA TINA,Vinagre Doña Tina 12 oz,355,ml,Sí
+FAN-008,6,FAN-008-C06,Familiar,,Vinagre Familiar 12 oz,355,ml,Sí
+FAN-008,7,FAN-008-C07,Heef,,Vinagre Heef 12 oz,355,ml,Sí
+FAN-008,8,FAN-008-C08,Jumo,,Vinagre Jumo 12 oz,355,ml,Sí
+FAN-008,9,FAN-008-C09,Lins,,Vinagre Lins 12 oz,355,ml,Sí
+FAN-008,10,FAN-008-C10,Valle,,Vinagre Valle 12 oz,355,ml,Sí
+FAN-009,1,FAN-009-C01,Special,UNIMAR,Vainilla Special Galón,3785,ml,Sí
+FAN-010,1,FAN-010-C01,Special,UNIMAR,Vainilla Special 12 oz,355,ml,Sí
+FAN-010,2,FAN-010-C02,Doña Tina,DOÑA TINA,Vainilla Doña Tina 12 oz,355,ml,Sí
+FAN-010,3,FAN-010-C03,Nica,,Vainilla Nica 12 oz,355,ml,Sí
+FAN-010,4,FAN-010-C04,Rey,UNIMAR,Vainilla Rey 12 oz,355,ml,Sí
+FAN-010,5,FAN-010-C05,2Cr,,Vainilla 2Cr 12 oz,355,ml,Sí
+FAN-010,6,FAN-010-C06,Chiltepe,,Vainilla Chiltepe 12 oz,355,ml,Sí
+FAN-010,7,FAN-010-C07,Duggi,,Vainilla Duggi 12 oz,355,ml,Sí
+FAN-010,8,FAN-010-C08,Familiar,,Vainilla Familiar 12 oz,355,ml,Sí
+FAN-010,9,FAN-010-C09,Festin,,Vainilla Festin 12 oz,355,ml,Sí
+FAN-010,10,FAN-010-C10,San Ramon,,Vainilla San Ramon 12 oz,355,ml,Sí
