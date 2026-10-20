@@ -28,6 +28,7 @@ COLS_REGISTRO = [
     "Municipio", "Departamento",
     "SKU_ID", "Tipo", "Producto_ID", "Comp_Orden", "Precio_Entrada", "Precio_Salida",
     "Margen_Abs", "Margen_Pct", "Contenido", "UM", "Precio_UM", "Disponible", "Promo", "Sell_Out",
+    "Precio_Entrada_Lista",   # precio SUPLISA por zona (Maestro_SKU) = entrada del PDV para FANNY
 ]
 
 st.set_page_config(page_title="Levantamiento de Precios", page_icon="🏷️", layout="centered")
@@ -226,14 +227,30 @@ if "ruta_sesion" not in st.session_state:
 
 fila_ruta = m_ruta[m_ruta["Ruta"] == st.session_state.ruta_sesion].iloc[0]
 vend = {"Ruta": fila_ruta["Ruta"], "Usuario": fila_ruta["Ruta"]}
-# Precio de referencia según la zona de la ruta: columna Precio_<ZONA> en Maestro_SKU
-zona_ruta = str(fila_ruta.get("Zona_Reporte", "")).strip()
-COL_PRECIO_ZONA = "Precio_" + "_".join(zona_ruta.replace(",", " ").upper().split())
+# Zona de precio de la ruta → columna Precio_<ZONA> en Maestro_SKU
+ZONAS_PRECIO = [("MA_", "MANAGUA"), ("HORECA", "MANAGUA"), ("MERCADOS", "MANAGUA"), ("OFICINA", "MANAGUA"),
+                ("SUPER", "MANAGUA"), ("CENTRO", "CENTRO"), ("NORTE", "NORTE"),
+                ("OCCIDENTE", "OCCIDENTE_SURORIENTE"), ("SURORIENTE", "OCCIDENTE_SURORIENTE")]
 
 
-def precio_ref(s):
-    """Precio de la zona de la ruta; si está vacío, usa Precio_Sugerido general."""
-    return str(s.get(COL_PRECIO_ZONA, "") or "").strip() or str(s.get("Precio_Sugerido", "") or "").strip()
+def zona_precio(fila) -> str:
+    """Columna Zona_Precio de Maestro_Ruta si existe; si no, se deduce del código de ruta."""
+    z = str(fila.get("Zona_Precio", "") or "").strip().upper().replace(" ", "_")
+    if z:
+        return z
+    ruta = str(fila.get("Ruta", "")).upper()
+    return next((zona for pre, zona in ZONAS_PRECIO if ruta.startswith(pre)), "")
+
+
+zona_ruta = zona_precio(fila_ruta)
+COL_PRECIO_ZONA = f"Precio_{zona_ruta}"
+
+
+def precio_lista(s):
+    """Precio SUPLISA de la zona (entrada del PDV para el SKU propio). Vacío si no está cargado."""
+    return num(str(s.get(COL_PRECIO_ZONA, "") or "").strip())
+
+
 vend_nombre = fila_ruta["Etiqueta"]
 c1, c2 = st.columns([2, 1])
 c1.markdown(f"🚚 **Ruta {vend_nombre}**")
@@ -308,13 +325,14 @@ st.divider()
 capturas = []  # una entrada por producto observado
 
 
-def fila_producto(sku_id, tipo, prod_id, nombre, cont, um, orden, extra=""):
+def fila_producto(sku_id, tipo, prod_id, nombre, cont, um, orden, extra="", lista=None):
     """Una fila por producto: Precio entrada (lo que paga el PDV, opcional) y salida (al consumidor)."""
     k = f"{fid}_{sku_id}_{prod_id}"
     st.markdown(f"{'**🟦 PROPIO** · ' if tipo == 'Propio' else ''}{nombre}  \n"
                 f"<small>{cont} {um}{extra}</small>", unsafe_allow_html=True)
     a, b = st.columns(2)
-    entrada = a.text_input("Entrada C$ (opcional)", key=f"e_{k}", placeholder="Si se consigue")
+    entrada = a.text_input("Entrada C$ (opcional)", key=f"e_{k}",
+                           placeholder=f"Lista zona: {lista:,.2f}" if lista else "Si se consigue")
     salida = b.text_input("Salida C$", key=f"p_{k}", placeholder="Precio al consumidor")
     f1, f2 = st.columns(2)
     sin_exist = f1.checkbox("Sin existencia", key=f"nd_{k}")
@@ -323,15 +341,16 @@ def fila_producto(sku_id, tipo, prod_id, nombre, cont, um, orden, extra=""):
     ps = None if sin_exist else num(salida)
     c = num(cont)
     pu = round(ps / c, 4) if ps and c else None
-    m_abs = round(ps - pe, 2) if ps and pe else None
-    m_pct = round((ps - pe) / ps * 100, 1) if ps and pe else None   # margen sobre precio de venta
+    pe_m = pe or lista                 # margen: entrada observada; si no hay, la de lista por zona
+    m_abs = round(ps - pe_m, 2) if ps and pe_m else None
+    m_pct = round((ps - pe_m) / ps * 100, 1) if ps and pe_m else None   # margen sobre precio de venta
     capturas.append(dict(SKU_ID=sku_id, Tipo=tipo, Producto_ID=prod_id, Comp_Orden=orden,
                          Precio_Entrada=pe, Precio_Salida=ps, Margen_Abs=m_abs, Margen_Pct=m_pct,
                          Contenido=cont, UM=um, Precio_UM=pu,
                          Disponible="No" if sin_exist else "Sí", Promo="Sí" if promo else "No",
-                         Sell_Out="", _texto=salida, _texto_e=entrada, _sin=sin_exist))
+                         Sell_Out="", Precio_Entrada_Lista=lista, _texto=salida, _texto_e=entrada, _sin=sin_exist))
     if m_pct is not None:
-        st.caption(f"Margen PDV: C$ {m_abs:,.2f} · {m_pct:.1f}%")
+        st.caption(f"Margen PDV: C$ {m_abs:,.2f} · {m_pct:.1f}%" + ("" if pe else " (con precio de lista)"))
     return pu, promo
 
 
@@ -340,9 +359,11 @@ def bloque_sku(s):
     with st.container(border=True):
         st.markdown(f"#### {s['Producto']}")
         st.caption(f"{s.get('Categoria', '')} · {s.get('Presentacion', '')} · {s['Contenido']} {s['UM']}")
+        lista = precio_lista(s)
         pu_own, _ = fila_producto(s["SKU_ID"], "Propio", s["SKU_ID"], s["Producto"],
                                   s["Contenido"], s["UM"], 0,
-                                  f" · referencia {zona_ruta.title()} C$ {precio_ref(s)}" if precio_ref(s) else "")
+                                  f" · precio lista {zona_ruta.replace('_', '/').title()} C$ {lista:,.2f}" if lista else "",
+                                  lista=lista)
         pu_comp = []
         for _, c in comps.iterrows():
             pu, promo = fila_producto(s["SKU_ID"], "Competencia", c["Comp_ID"],

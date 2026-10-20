@@ -63,8 +63,11 @@ if hasta:
 if reg.empty:
     sys.exit("No hay levantamientos en el período indicado.")
 
-for col in ["Precio_Entrada", "Precio_Salida", "Precio_UM"]:
-    reg[col] = pd.to_numeric(reg[col], errors="coerce")
+for col in ["Precio_Entrada", "Precio_Salida", "Precio_UM", "Precio_Entrada_Lista"]:
+    reg[col] = pd.to_numeric(reg[col], errors="coerce") if col in reg else float("nan")
+# FANNY: si no se observó entrada en el PDV, se usa el precio de lista SUPLISA de la zona
+propio = reg["Tipo"].eq("Propio") & reg["Precio_Entrada"].isna()
+reg.loc[propio, "Precio_Entrada"] = reg.loc[propio, "Precio_Entrada_Lista"]
 
 # Atributos del producto (marca, distribuidor, descripción, categoría)
 prod_propio = sku.rename(columns={"SKU_ID": "Producto_ID", "Proveedor": "Distribuidor"})
