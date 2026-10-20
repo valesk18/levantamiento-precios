@@ -9,6 +9,7 @@ Ejecutar    : streamlit run app.py
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import hashlib
+import time
 import hmac
 import unicodedata
 import uuid
@@ -40,6 +41,20 @@ def usar_sheets() -> bool:
         return False
 
 
+def canal_de_ruta(fila) -> str:
+    """Canal por defecto: columna Canal de Maestro_Ruta; si está vacía, se deduce del código de ruta."""
+    c = str(fila.get("Canal", "") or "").strip().title()
+    if c in CANALES:
+        return c
+    ruta = str(fila.get("Ruta", "")).upper()
+    for prefijo, canal in [("MA_", "Detalle"), ("HORECA", "Horeca"), ("OFICINA", "Oficina"), ("SUPER", "Super"),
+                           ("MERCADOS", "Mayorista"), ("NORTE", "Mayorista"), ("CENTRO", "Mayorista"),
+                           ("OCCIDENTE", "Mayorista"), ("SURORIENTE", "Mayorista")]:
+        if ruta.startswith(prefijo):
+            return canal
+    return ""
+
+
 def hash_pin(pin: str) -> str:
     """SHA-256 de (PIN_SALT + PIN). La sal vive en secrets, no en el Sheet."""
     try:
@@ -56,10 +71,24 @@ def libro_sheets():
     return gc.open_by_key(st.secrets["SHEET_ID"])
 
 
+def con_reintentos(fn, intentos: int = 4):
+    """Reintenta llamadas a Google si responde 'cuota excedida' (429) o falla temporal (5xx)."""
+    import gspread
+    for i in range(intentos):
+        try:
+            return fn()
+        except gspread.exceptions.APIError as e:
+            codigo = getattr(getattr(e, "response", None), "status_code", None)
+            if codigo in (429, 500, 502, 503) and i < intentos - 1:
+                time.sleep(2 * 2 ** i)          # 2, 4, 8 segundos
+                continue
+            raise
+
+
 @st.cache_data(ttl=600, show_spinner="Cargando maestros…")
 def leer_tabla(nombre: str) -> pd.DataFrame:
     if usar_sheets():
-        df = pd.DataFrame(libro_sheets().worksheet(nombre).get_all_records())
+        df = pd.DataFrame(con_reintentos(lambda: libro_sheets().worksheet(nombre).get_all_records()))
     else:
         df = pd.read_csv(DATA_DIR / f"{nombre}.csv", dtype=str)
     return df.fillna("").astype(str).apply(lambda c: c.str.strip())
@@ -78,18 +107,45 @@ def leer_registro() -> pd.DataFrame:
     return df.reindex(columns=COLS_REGISTRO).fillna("")
 
 
+@st.cache_data(ttl=120, show_spinner=False)
+def claves_registro() -> pd.DataFrame:
+    """Solo Fecha y Cliente_Nombre, en UNA lectura y con caché de 2 min.
+    Antes se leía todo el registro en cada clic y se agotaba la cuota de lectura de Google."""
+    if usar_sheets():
+        ws = libro_sheets().worksheet("Registro_Precios")
+        c_f = COLS_REGISTRO.index("Fecha") + 1
+        c_c = COLS_REGISTRO.index("Cliente_Nombre") + 1
+        rangos = [f"{gspread_col(c_f)}2:{gspread_col(c_f)}", f"{gspread_col(c_c)}2:{gspread_col(c_c)}"]
+        fechas, clientes = con_reintentos(lambda: ws.batch_get(rangos))
+        fechas = [r[0] if r else "" for r in fechas]
+        clientes = [r[0] if r else "" for r in clientes]
+        n = max(len(fechas), len(clientes))
+        fechas += [""] * (n - len(fechas)); clientes += [""] * (n - len(clientes))
+        return pd.DataFrame({"Fecha": fechas, "Cliente_Nombre": clientes})
+    return leer_registro()[["Fecha", "Cliente_Nombre"]]
+
+
+def gspread_col(n: int) -> str:
+    """1 -> A, 6 -> F, 27 -> AA."""
+    letras = ""
+    while n:
+        n, r = divmod(n - 1, 26)
+        letras = chr(65 + r) + letras
+    return letras
+
+
 def guardar_filas(filas: list[dict]) -> None:
     nuevas = pd.DataFrame(filas).reindex(columns=COLS_REGISTRO).fillna("")
     if usar_sheets():
         ws = libro_sheets().worksheet("Registro_Precios")
-        encabezado = ws.row_values(1)
+        encabezado = con_reintentos(lambda: ws.row_values(1))
         if encabezado != COLS_REGISTRO:
             if len(ws.get_all_values()) <= 1:      # hoja vacía: se corrige el encabezado
                 ws.update(range_name="A1", values=[COLS_REGISTRO])
             else:
                 raise RuntimeError("Los encabezados de Registro_Precios no coinciden con la app. "
                                    "Deben ser, en este orden: " + ", ".join(COLS_REGISTRO))
-        ws.append_rows(nuevas.values.tolist(), value_input_option="USER_ENTERED")
+        con_reintentos(lambda: ws.append_rows(nuevas.values.tolist(), value_input_option="USER_ENTERED"))
     else:
         ruta = DATA_DIR / "Registro_Precios.csv"
         if ruta.exists():                           # migra un CSV con estructura anterior
@@ -170,6 +226,14 @@ if "ruta_sesion" not in st.session_state:
 
 fila_ruta = m_ruta[m_ruta["Ruta"] == st.session_state.ruta_sesion].iloc[0]
 vend = {"Ruta": fila_ruta["Ruta"], "Usuario": fila_ruta["Ruta"]}
+# Precio de referencia según la zona de la ruta: columna Precio_<ZONA> en Maestro_SKU
+zona_ruta = str(fila_ruta.get("Zona_Reporte", "")).strip()
+COL_PRECIO_ZONA = "Precio_" + "_".join(zona_ruta.replace(",", " ").upper().split())
+
+
+def precio_ref(s):
+    """Precio de la zona de la ruta; si está vacío, usa Precio_Sugerido general."""
+    return str(s.get(COL_PRECIO_ZONA, "") or "").strip() or str(s.get("Precio_Sugerido", "") or "").strip()
 vend_nombre = fila_ruta["Etiqueta"]
 c1, c2 = st.columns([2, 1])
 c1.markdown(f"🚚 **Ruta {vend_nombre}**")
@@ -184,7 +248,13 @@ def normalizar(txt: str) -> str:
     return " ".join(t.upper().split())
 
 
-previos = leer_registro()
+try:
+    previos = claves_registro()
+except Exception:
+    previos = pd.DataFrame(columns=["Fecha", "Cliente_Nombre"])   # si Google falla, no bloquea la captura
+# Lo guardado en esta sesión cuenta como previo aunque la caché aún no lo refleje
+previos = pd.concat([previos, pd.DataFrame(st.session_state.get("guardados", []),
+                                           columns=["Fecha", "Cliente_Nombre"])], ignore_index=True)
 
 # ── Municipio: solo los de la ruta en sesión (Maestro_Municipio); "Otro" permite escribirlo ──
 OTRO = "Otro (escribir)"
@@ -223,7 +293,9 @@ departamento = normalizar(departamento)
 c1, c2 = st.columns([2, 1])
 cliente = c1.text_input("Nombre del cliente", key=f"cli_{fid}", max_chars=80,
                         placeholder="Ej.: Pulpería La Esperanza")
-canal = c2.selectbox("Canal", CANALES, index=None, placeholder="Canal", key=f"canal_{fid}")
+canal_ruta = canal_de_ruta(fila_ruta)          # canal predominante de la ruta, editable si el PDV es de otro
+canal = c2.selectbox("Canal", CANALES, index=CANALES.index(canal_ruta) if canal_ruta in CANALES else None,
+                     placeholder="Canal", key=f"canal_{fid}")
 cliente = normalizar(cliente)
 if len(municipio) < 3 or len(cliente) < 3 or not canal:
     st.info("Complete municipio, nombre del cliente (mínimo 3 letras) y canal.")
@@ -273,7 +345,7 @@ def bloque_sku(s):
         st.caption(f"{s.get('Categoria', '')} · {s.get('Presentacion', '')} · {s['Contenido']} {s['UM']}")
         pu_own, _ = fila_producto(s["SKU_ID"], "Propio", s["SKU_ID"], s["Producto"],
                                   s["Contenido"], s["UM"], 0,
-                                  f" · referencia C$ {s['Precio_Sugerido']}" if s.get("Precio_Sugerido") else "")
+                                  f" · referencia {zona_ruta.title()} C$ {precio_ref(s)}" if precio_ref(s) else "")
         pu_comp = []
         for _, c in comps.iterrows():
             pu, promo = fila_producto(s["SKU_ID"], "Competencia", c["Comp_ID"],
@@ -358,6 +430,8 @@ if st.button("💾 Guardar levantamiento", type="primary", use_container_width=T
                           "Departamento": pdv["Departamento"]})
         try:
             guardar_filas(filas)
+            st.session_state.setdefault("guardados", []).append((fecha.isoformat(), pdv["Nombre"]))
+            claves_registro.clear()
             st.session_state.form_id += 1
             st.session_state.ok_msg = f"Guardado {id_lev}: {len(filas)} registros de {pdv['Nombre']}."
             st.rerun()
