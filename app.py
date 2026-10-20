@@ -264,29 +264,26 @@ DEPARTAMENTOS = ["Boaco", "Carazo", "Chinandega", "Chontales", "Estelí", "Grana
 de_ruta = m_muni[m_muni["Ruta"] == vend["Ruta"]] if not m_muni.empty else m_muni
 if "Departamento" not in de_ruta:
     de_ruta = de_ruta.assign(Departamento="")
-# Etiqueta "Municipio · Departamento" para distinguir homónimos (ej. Wiwilí)
 de_ruta = de_ruta[de_ruta["Municipio"] != ""].assign(
-    Etq=lambda x: x["Municipio"] + x["Departamento"].map(lambda d: f" · {d}" if d else ""))
-if "Clientes_BD" in de_ruta:          # primero los municipios con más clientes de la ruta
-    de_ruta = de_ruta.assign(_n=pd.to_numeric(de_ruta["Clientes_BD"], errors="coerce").fillna(0))
-    de_ruta = de_ruta.sort_values(["_n", "Etq"], ascending=[False, True])
-opciones = list(dict.fromkeys(de_ruta["Etq"]))
-departamento = ""
-if opciones:
-    sel = st.selectbox("Municipio", opciones + [OTRO], index=None,
-                       placeholder="Seleccione el municipio", key=f"muni_{fid}")
-    if sel == OTRO:
-        municipio = st.text_input("Escriba el municipio", key=f"munix_{fid}")
-        departamento = st.selectbox("Departamento", DEPARTAMENTOS, index=None, key=f"dep_{fid}") or ""
-    elif sel:
-        f_m = de_ruta[de_ruta["Etq"] == sel].iloc[0]
-        municipio, departamento = f_m["Municipio"], f_m["Departamento"]
-    else:
-        municipio = ""
+    _n=pd.to_numeric(de_ruta.get("Clientes_BD", 0), errors="coerce")).fillna({"_n": 0})
+
+# 1) Departamento: solo los que atiende la ruta (según RUTAS_MUN), en orden alfabético
+deptos_ruta = sorted(de_ruta.loc[de_ruta["Departamento"] != "", "Departamento"].unique(), key=normalizar)
+d1, d2 = st.columns(2)
+departamento = d1.selectbox("Departamento", deptos_ruta or DEPARTAMENTOS,
+                            index=0 if len(deptos_ruta) == 1 else None,   # ruta de un solo depto: ya seleccionado
+                            placeholder="Seleccione el departamento", key=f"dep_{fid}") or ""
+
+# 2) Municipio: solo los de ese departamento (y de esta ruta)
+munis = sorted(de_ruta.loc[de_ruta["Departamento"] == departamento, "Municipio"].unique(),
+               key=normalizar) if departamento else []
+sel = d2.selectbox("Municipio", munis + [OTRO] if departamento else [], index=None,
+                   placeholder="Seleccione el municipio" if departamento else "Primero el departamento",
+                   disabled=not departamento, key=f"muni_{fid}")
+if sel == OTRO:
+    municipio = st.text_input(f"Escriba el municipio de {departamento}", key=f"munix_{fid}")
 else:
-    municipio = st.text_input("Municipio", key=f"munix_{fid}",
-                              placeholder="Esta ruta aún no tiene municipios cargados: escríbalo")
-    departamento = st.selectbox("Departamento", DEPARTAMENTOS, index=None, key=f"dep_{fid}") or ""
+    municipio = sel or ""
 municipio = normalizar(municipio)
 departamento = normalizar(departamento)
 
