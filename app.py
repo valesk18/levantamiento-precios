@@ -260,7 +260,8 @@ c1.markdown(f"🚚 **Ruta {vend_nombre}**")
 if c2.button("Salir", use_container_width=True):
     st.session_state.clear()
     st.rerun()
-fecha = st.date_input("Fecha", value=datetime.now().date(), format="DD/MM/YYYY")
+hoy_ni = datetime.now(timezone(timedelta(hours=TZ_OFFSET_H))).date()   # fecha de Nicaragua (el servidor está en UTC)
+fecha = st.date_input("Fecha", value=hoy_ni, max_value=hoy_ni, format="DD/MM/YYYY")
 # ── Cliente digitado (temporal, mientras no exista Maestro_PDV) ──
 def normalizar(txt: str) -> str:
     """Mayúsculas, sin tildes ni espacios dobles: 'Pulpería  la Esperanza' -> 'PULPERIA LA ESPERANZA'."""
