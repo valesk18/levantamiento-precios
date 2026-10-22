@@ -261,7 +261,8 @@ if c2.button("Salir", use_container_width=True):
     st.session_state.clear()
     st.rerun()
 hoy_ni = datetime.now(timezone(timedelta(hours=TZ_OFFSET_H))).date()   # fecha de Nicaragua (el servidor está en UTC)
-fecha = st.date_input("Fecha", value=hoy_ni, max_value=hoy_ni, format="DD/MM/YYYY")
+fecha = hoy_ni                                  # fija: solo se registra el día en curso
+st.markdown(f"📅 **Fecha:** {fecha:%d/%m/%Y}")
 # ── Cliente digitado (temporal, mientras no exista Maestro_PDV) ──
 def normalizar(txt: str) -> str:
     """Mayúsculas, sin tildes ni espacios dobles: 'Pulpería  la Esperanza' -> 'PULPERIA LA ESPERANZA'."""
@@ -437,6 +438,7 @@ if st.button("💾 Guardar levantamiento", type="primary", use_container_width=T
         st.error("Confirme el levantamiento duplicado antes de guardar.")
     else:
         ahora = datetime.now(timezone(timedelta(hours=TZ_OFFSET_H)))
+        fecha = ahora.date()                       # la fecha guardada es siempre la del momento de guardar
         id_lev = "LV-" + uuid.uuid4().hex[:8].upper()
         filas = []
         for c in capturas:
