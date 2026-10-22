@@ -17,6 +17,8 @@ import uuid
 import pandas as pd
 import streamlit as st
 
+from divipola import MUNICIPIOS
+
 MAX_COMP = 3
 DATA_DIR = Path(__file__).parent / "data"
 TZ_OFFSET_H = -6  # Nicaragua (UTC-6), para la hora de registro en la nube
@@ -304,16 +306,18 @@ if "Departamento" not in de_ruta:
 de_ruta = de_ruta[de_ruta["Municipio"] != ""].assign(
     _n=pd.to_numeric(de_ruta.get("Clientes_BD", 0), errors="coerce")).fillna({"_n": 0})
 
-# 1) Departamento: solo los que atiende la ruta (según RUTAS_MUN), en orden alfabético
+# 1) Departamento: los 17 del país; primero los que atiende la ruta (según RUTAS_MUN)
 deptos_ruta = sorted(de_ruta.loc[de_ruta["Departamento"] != "", "Departamento"].unique(), key=normalizar)
+todos_deptos = deptos_ruta + sorted([d for d in MUNICIPIOS if d not in deptos_ruta], key=normalizar)
 d1, d2 = st.columns(2)
-departamento = d1.selectbox("Departamento", deptos_ruta or DEPARTAMENTOS,
+departamento = d1.selectbox("Departamento", todos_deptos,
                             index=0 if len(deptos_ruta) == 1 else None,   # ruta de un solo depto: ya seleccionado
                             placeholder="Seleccione el departamento", key=f"dep_{fid}") or ""
 
-# 2) Municipio: solo los de ese departamento (y de esta ruta)
-munis = sorted(de_ruta.loc[de_ruta["Departamento"] == departamento, "Municipio"].unique(),
-               key=normalizar) if departamento else []
+# 2) Municipio: todos los del departamento (división política); primero los que atiende la ruta
+munis_ruta = sorted(de_ruta.loc[de_ruta["Departamento"] == departamento, "Municipio"].unique(), key=normalizar)
+munis = (munis_ruta + sorted([m for m in MUNICIPIOS.get(departamento, []) if m not in munis_ruta],
+                             key=normalizar)) if departamento else []
 sel = d2.selectbox("Municipio", munis + [OTRO] if departamento else [], index=None,
                    placeholder="Seleccione el municipio" if departamento else "Primero el departamento",
                    disabled=not departamento, key=f"muni_{fid}")
