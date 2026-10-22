@@ -1,508 +1,407 @@
 Ruta,Municipio,Departamento,Clientes_BD
-CENTRO_01,Matiguás,Matagalpa,59
-CENTRO_01,Río Blanco,Matagalpa,57
 CENTRO_01,Boaco,Boaco,55
-CENTRO_01,Juigalpa,Chontales,49
-CENTRO_01,Muy Muy,Matagalpa,49
 CENTRO_01,Camoapa,Boaco,45
-CENTRO_01,Siuna,RACCN,32
-CENTRO_01,Rosita,RACCN,25
-CENTRO_01,San Carlos,Río San Juan,24
-CENTRO_01,Mulukukú,RACCN,22
-CENTRO_01,Managua,RACCN,21
-CENTRO_01,Santo Domingo,Chontales,21
-CENTRO_01,El Rama,RACCS,20
-CENTRO_01,La Libertad,Chontales,18
-CENTRO_01,Nueva Guinea,RACCS,17
-CENTRO_01,Bonanza,RACCN,16
-CENTRO_01,Puerto Cabezas,RACCN,16
-CENTRO_01,Managua,Managua,14
-CENTRO_01,Acoyapa,Chontales,13
-CENTRO_01,Teustepe,Boaco,11
-CENTRO_01,Managua,RACCS,8
-CENTRO_01,Bluefields,RACCS,7
-CENTRO_01,Río Blanco,RACCN,5
-CENTRO_01,Muelle de los Bueyes,RACCS,4
-CENTRO_01,El Almendro,Río San Juan,3
-CENTRO_01,San Francisco de Cuapa,Chontales,3
 CENTRO_01,San José de los Remates,Boaco,3
-CENTRO_01,San Lorenzo,Boaco,3
-CENTRO_01,San Miguelito,Río San Juan,3
+CENTRO_01,San Lorenzo,Boaco,4
+CENTRO_01,Teustepe,Boaco,11
+CENTRO_01,Acoyapa,Chontales,13
+CENTRO_01,Juigalpa,Chontales,49
+CENTRO_01,La Libertad,Chontales,18
+CENTRO_01,San Francisco de Cuapa,Chontales,3
+CENTRO_01,Santo Domingo,Chontales,21
 CENTRO_01,Santo Tomás,Chontales,3
 CENTRO_01,Villa Sandino,Chontales,3
-CENTRO_01,San Ramón,Matagalpa,2
-CENTRO_01,El Ayote,RACCS,1
+CENTRO_01,La Trinidad,Estelí,1
 CENTRO_01,El Cuá,Jinotega,1
-CENTRO_01,Esquipulas,Matagalpa,1
-CENTRO_01,La Trinidad,RACCN,1
-CENTRO_01,Managua,Chontales,1
-CENTRO_01,Managua,Río San Juan,1
-CENTRO_01,Matagalpa,Matagalpa,1
-CENTRO_01,Rosita,Managua,1
+CENTRO_01,Managua,Managua,45
 CENTRO_01,San Francisco Libre,Managua,1
-CENTRO_01,San Lorenzo,Chontales,1
-CENTRO_01,Siuna,Managua,1
-CENTRO_01,Tipitapa,RACCN,1
-CENTRO_02,Bluefields,RACCS,52
-CENTRO_02,El Rama,RACCS,47
-CENTRO_02,Juigalpa,Chontales,43
-CENTRO_02,Nueva Guinea,RACCS,42
-CENTRO_02,San Carlos,Río San Juan,29
-CENTRO_02,Acoyapa,Chontales,14
-CENTRO_02,Santo Tomás,Chontales,14
-CENTRO_02,Muelle de los Bueyes,RACCS,10
-CENTRO_02,El Tortuguero,RACCS,7
-CENTRO_02,El Castillo,Río San Juan,5
-CENTRO_02,San Miguelito,Río San Juan,5
-CENTRO_02,El Ayote,Chontales,4
-CENTRO_02,El Ayote,RACCS,4
-CENTRO_02,Managua,Managua,4
-CENTRO_02,Villa Sandino,Chontales,3
+CENTRO_01,Tipitapa,Managua,1
+CENTRO_01,Esquipulas,Matagalpa,1
+CENTRO_01,Matagalpa,Matagalpa,1
+CENTRO_01,Matiguás,Matagalpa,59
+CENTRO_01,Muy Muy,Matagalpa,49
+CENTRO_01,Río Blanco,Matagalpa,62
+CENTRO_01,San Ramón,Matagalpa,2
+CENTRO_01,Bonanza,RACCN,16
+CENTRO_01,Mulukukú,RACCN,22
+CENTRO_01,Puerto Cabezas,RACCN,16
+CENTRO_01,Rosita,RACCN,26
+CENTRO_01,Siuna,RACCN,33
+CENTRO_01,Bluefields,RACCS,7
+CENTRO_01,El Ayote,RACCS,1
+CENTRO_01,El Rama,RACCS,20
+CENTRO_01,Muelle de los Bueyes,RACCS,4
+CENTRO_01,Nueva Guinea,RACCS,17
+CENTRO_01,El Almendro,Río San Juan,3
+CENTRO_01,San Carlos,Río San Juan,24
+CENTRO_01,San Miguelito,Río San Juan,3
 CENTRO_02,Boaco,Boaco,2
-CENTRO_02,El Almendro,Río San Juan,2
+CENTRO_02,Acoyapa,Chontales,14
+CENTRO_02,El Coral,Chontales,1
+CENTRO_02,Juigalpa,Chontales,43
+CENTRO_02,La Libertad,Chontales,1
 CENTRO_02,San Pedro de Lóvago,Chontales,2
 CENTRO_02,Santo Domingo,Chontales,2
-CENTRO_02,El Coral,Chontales,1
-CENTRO_02,El Rama,Chontales,1
-CENTRO_02,La Libertad,Chontales,1
-CENTRO_02,Nueva Guinea,Chontales,1
+CENTRO_02,Santo Tomás,Chontales,14
+CENTRO_02,Villa Sandino,Chontales,3
+CENTRO_02,Managua,Managua,4
 CENTRO_02,Río Blanco,Matagalpa,1
-CH_101,Chinandega,Chinandega,659
-CH_101,Chichigalpa,Chinandega,114
-CH_101,El Viejo,Chinandega,59
-CH_101,Corinto,Chinandega,33
-CH_101,Posoltega,Chinandega,18
-CH_101,El Realejo,Chinandega,15
-CH_101,Managua,Managua,7
-CH_101,Ciudad Sandino,Managua,1
-CH_101,Diriá,Granada,1
-CH_101,León,Chinandega,1
-CH_101,Masaya,Masaya,1
-CH_101,Santo Tomás del Norte,Chinandega,1
-HORECA_1,Managua,Managua,724
-HORECA_1,Tipitapa,Managua,21
+CENTRO_02,Bluefields,RACCS,52
+CENTRO_02,El Ayote,RACCS,8
+CENTRO_02,El Rama,RACCS,48
+CENTRO_02,El Tortuguero,RACCS,7
+CENTRO_02,Muelle de los Bueyes,RACCS,10
+CENTRO_02,Nueva Guinea,RACCS,43
+CENTRO_02,El Almendro,Río San Juan,2
+CENTRO_02,El Castillo,Río San Juan,5
+CENTRO_02,San Carlos,Río San Juan,29
+CENTRO_02,San Miguelito,Río San Juan,5
+HORECA_1,Jinotepe,Carazo,1
+HORECA_1,Diriá,Granada,1
+HORECA_1,Granada,Granada,1
 HORECA_1,Ciudad Sandino,Managua,20
 HORECA_1,El Crucero,Managua,3
-HORECA_1,Masaya,Masaya,2
-HORECA_1,Diriá,Carazo,1
-HORECA_1,Granada,Granada,1
-HORECA_1,Jinotepe,Carazo,1
+HORECA_1,Managua,Managua,724
 HORECA_1,Mateare,Managua,1
 HORECA_1,San Rafael del Sur,Managua,1
 HORECA_1,Ticuantepe,Managua,1
-HORECA_2,Managua,Managua,1060
-HORECA_2,Granada,Granada,61
-HORECA_2,Masaya,Masaya,47
-HORECA_2,Chinandega,Chinandega,40
-HORECA_2,León,León,40
-HORECA_2,Estelí,Estelí,37
-HORECA_2,Ciudad Sandino,Managua,29
-HORECA_2,Ticuantepe,Managua,29
-HORECA_2,Jinotepe,Carazo,24
-HORECA_2,Diriamba,Carazo,19
-HORECA_2,Matagalpa,Matagalpa,18
-HORECA_2,Nindirí,Masaya,18
-HORECA_2,Ocotal,Nueva Segovia,14
-HORECA_2,Rivas,Rivas,14
-HORECA_2,Tipitapa,Managua,14
-HORECA_2,Juigalpa,Chontales,12
-HORECA_2,Sébaco,Matagalpa,11
-HORECA_2,Ciudad Darío,Matagalpa,9
-HORECA_2,Jinotega,Jinotega,9
-HORECA_2,Mateare,Managua,9
-HORECA_2,Nagarote,León,7
-HORECA_2,Camoapa,Boaco,6
-HORECA_2,Chichigalpa,Chinandega,6
-HORECA_2,San Marcos,Carazo,6
+HORECA_1,Tipitapa,Managua,21
+HORECA_1,Masaya,Masaya,2
 HORECA_2,Boaco,Boaco,5
-HORECA_2,Masatepe,Masaya,5
-HORECA_2,Nandaime,Granada,5
-HORECA_2,San Carlos,Río San Juan,5
-HORECA_2,El Viejo,Chinandega,4
-HORECA_2,San Rafael del Sur,Managua,4
-HORECA_2,Siuna,RACCN,4
-HORECA_2,Somoto,Madriz,4
-HORECA_2,Ticuantepe,Masaya,4
-HORECA_2,Tola,Rivas,4
-HORECA_2,Bluefields,RACCS,3
-HORECA_2,Catarina,Masaya,3
+HORECA_2,Camoapa,Boaco,6
+HORECA_2,Diriamba,Carazo,19
+HORECA_2,Dolores,Carazo,1
+HORECA_2,Jinotepe,Carazo,24
+HORECA_2,San Marcos,Carazo,6
+HORECA_2,Chichigalpa,Chinandega,6
+HORECA_2,Chinandega,Chinandega,40
 HORECA_2,Corinto,Chinandega,3
-HORECA_2,Jalapa,Nueva Segovia,3
-HORECA_2,Niquinohomo,Masaya,3
-HORECA_2,San Juan del Sur,Rivas,3
-HORECA_2,Bonanza,RACCN,2
-HORECA_2,El Cuá,Jinotega,2
-HORECA_2,Managua,RACCN,2
-HORECA_2,Mulukukú,RACCN,2
-HORECA_2,Nueva Guinea,RACCS,2
-HORECA_2,Quilalí,Nueva Segovia,2
-HORECA_2,Río Blanco,Matagalpa,2
+HORECA_2,El Realejo,Chinandega,1
+HORECA_2,El Viejo,Chinandega,4
+HORECA_2,Posoltega,Chinandega,1
+HORECA_2,Juigalpa,Chontales,12
 HORECA_2,Santo Tomás,Chontales,2
 HORECA_2,Villa Sandino,Chontales,2
-HORECA_2,Dolores,Carazo,1
-HORECA_2,El Crucero,Managua,1
-HORECA_2,El Rama,RACCS,1
-HORECA_2,El Realejo,Chinandega,1
-HORECA_2,Esquipulas,Matagalpa,1
-HORECA_2,La Concepción,Masaya,1
-HORECA_2,La Paz Centro,León,1
+HORECA_2,Estelí,Estelí,37
 HORECA_2,La Trinidad,Estelí,1
-HORECA_2,Larreynaga,Managua,1
-HORECA_2,Matiguás,Matagalpa,1
-HORECA_2,Nandasmo,Masaya,1
-HORECA_2,Posoltega,Chinandega,1
-HORECA_2,Puerto Cabezas,RACCN,1
-HORECA_2,San Jorge,Rivas,1
+HORECA_2,Granada,Granada,61
+HORECA_2,Nandaime,Granada,5
+HORECA_2,El Cuá,Jinotega,2
+HORECA_2,Jinotega,Jinotega,9
 HORECA_2,San Sebastián de Yalí,Jinotega,1
 HORECA_2,Santa María de Pantasma,Jinotega,1
+HORECA_2,La Paz Centro,León,1
+HORECA_2,Larreynaga,León,1
+HORECA_2,León,León,40
+HORECA_2,Nagarote,León,7
 HORECA_2,Telica,León,1
-HORECA_2,Yalagüina,Madriz,1
-HORECA_2,Yalagüina,Nueva Segovia,1
-LE_101,León,León,636
-LE_101,Larreynaga,León,35
-LE_101,Achuapa,León,28
-LE_101,El Sauce,León,24
-LE_101,Quezalguaque,León,23
-LE_101,Telica,León,21
-LE_101,Managua,Managua,2
-LE_101,La Paz Centro,León,1
-MA_101,Managua,Managua,2127
-MA_101,San Rafael del Sur,Managua,332
-MA_101,Tipitapa,Managua,279
-MA_101,Diriamba,Carazo,227
+HORECA_2,Somoto,Madriz,4
+HORECA_2,Yalagüina,Madriz,2
+HORECA_2,Ciudad Sandino,Managua,29
+HORECA_2,El Crucero,Managua,1
+HORECA_2,Managua,Managua,1062
+HORECA_2,Mateare,Managua,9
+HORECA_2,San Rafael del Sur,Managua,4
+HORECA_2,Ticuantepe,Managua,33
+HORECA_2,Tipitapa,Managua,14
+HORECA_2,Catarina,Masaya,3
+HORECA_2,La Concepción,Masaya,1
+HORECA_2,Masatepe,Masaya,5
+HORECA_2,Masaya,Masaya,47
+HORECA_2,Nandasmo,Masaya,1
+HORECA_2,Nindirí,Masaya,18
+HORECA_2,Niquinohomo,Masaya,3
+HORECA_2,Ciudad Darío,Matagalpa,9
+HORECA_2,Esquipulas,Matagalpa,1
+HORECA_2,Matagalpa,Matagalpa,18
+HORECA_2,Matiguás,Matagalpa,1
+HORECA_2,Río Blanco,Matagalpa,2
+HORECA_2,Sébaco,Matagalpa,11
+HORECA_2,Jalapa,Nueva Segovia,3
+HORECA_2,Ocotal,Nueva Segovia,14
+HORECA_2,Quilalí,Nueva Segovia,2
+HORECA_2,Bonanza,RACCN,2
+HORECA_2,Mulukukú,RACCN,2
+HORECA_2,Puerto Cabezas,RACCN,1
+HORECA_2,Siuna,RACCN,4
+HORECA_2,Bluefields,RACCS,3
+HORECA_2,El Rama,RACCS,1
+HORECA_2,Nueva Guinea,RACCS,2
+HORECA_2,Rivas,Rivas,14
+HORECA_2,San Jorge,Rivas,1
+HORECA_2,San Juan del Sur,Rivas,3
+HORECA_2,Tola,Rivas,4
+HORECA_2,San Carlos,Río San Juan,5
+MA_101,Diriamba,Carazo,228
+MA_101,Dolores,Carazo,42
+MA_101,El Rosario,Carazo,29
 MA_101,Jinotepe,Carazo,225
-MA_101,Mateare,Managua,146
-MA_101,Ticuantepe,Managua,134
-MA_101,Ciudad Sandino,Managua,103
+MA_101,La Conquista,Carazo,13
+MA_101,La Paz de Carazo,Carazo,31
 MA_101,San Marcos,Carazo,101
 MA_101,Santa Teresa,Carazo,61
-MA_101,El Crucero,Managua,51
-MA_101,Dolores,Carazo,42
-MA_101,La Paz de Carazo,Carazo,31
-MA_101,El Rosario,Carazo,29
-MA_101,La Conquista,Carazo,13
-MA_101,La Concepción,Masaya,10
-MA_101,Villa Carlos Fonseca,Managua,9
-MA_101,Nindirí,Managua,4
-MA_101,La Concepción,Managua,3
 MA_101,León,León,3
-MA_101,Masatepe,Masaya,2
-MA_101,Diriamba,Managua,1
-MA_101,Managua,Masaya,1
+MA_101,Ciudad Sandino,Managua,103
+MA_101,El Crucero,Managua,51
+MA_101,Managua,Managua,2128
+MA_101,Mateare,Managua,146
 MA_101,San Francisco Libre,Managua,1
-MA_101,Ticuantepe,Masaya,1
-MA_102,Managua,Managua,2637
+MA_101,San Rafael del Sur,Managua,332
+MA_101,Ticuantepe,Managua,135
+MA_101,Tipitapa,Managua,279
+MA_101,Villa Carlos Fonseca,Managua,9
+MA_101,La Concepción,Masaya,13
+MA_101,Masatepe,Masaya,2
+MA_101,Nindirí,Masaya,4
+MA_102,Dolores,Carazo,1
 MA_102,Ciudad Sandino,Managua,249
+MA_102,Managua,Managua,2638
 MA_102,Mateare,Managua,24
+MA_102,San Francisco Libre,Managua,4
+MA_102,San Rafael del Sur,Managua,1
 MA_102,Ticuantepe,Managua,19
 MA_102,Tipitapa,Managua,15
-MA_102,Nindirí,Masaya,12
-MA_102,San Francisco Libre,Managua,4
-MA_102,Dolores,Managua,1
-MA_102,Esquipulas,Managua,1
-MA_102,Managua,Masaya,1
 MA_102,Masaya,Masaya,1
-MA_102,San Rafael del Sur,Managua,1
-MA_103,Managua,Managua,1250
-MA_103,Ciudad Sandino,Managua,1010
-MA_103,Mateare,Managua,182
-MA_103,Tipitapa,Managua,71
-MA_103,Jinotepe,Carazo,7
-MA_103,San Rafael del Sur,Managua,7
+MA_102,Nindirí,Masaya,12
+MA_102,Esquipulas,Matagalpa,1
 MA_103,Diriamba,Carazo,4
-MA_103,Villa Carlos Fonseca,Managua,2
 MA_103,Dolores,Carazo,1
-MA_103,El Rosario,Managua,1
+MA_103,El Rosario,Carazo,1
+MA_103,Jinotepe,Carazo,7
 MA_103,León,León,1
+MA_103,Ciudad Sandino,Managua,1010
+MA_103,Managua,Managua,1250
+MA_103,Mateare,Managua,182
+MA_103,San Rafael del Sur,Managua,7
+MA_103,Tipitapa,Managua,71
+MA_103,Villa Carlos Fonseca,Managua,2
 MA_103,Masaya,Masaya,1
-MA_104,Managua,Managua,2043
 MA_104,Ciudad Sandino,Managua,660
-MA_104,Tipitapa,Managua,79
-MA_104,Nindirí,Masaya,4
+MA_104,Managua,Managua,2043
 MA_104,Mateare,Managua,2
 MA_104,San Francisco Libre,Managua,1
 MA_104,Ticuantepe,Managua,1
-MA_105,Managua,Managua,1317
+MA_104,Tipitapa,Managua,79
+MA_104,Nindirí,Masaya,4
 MA_105,Ciudad Sandino,Managua,358
-MA_105,Tipitapa,Managua,122
+MA_105,Managua,Managua,1317
 MA_105,Mateare,Managua,31
 MA_105,San Francisco Libre,Managua,1
 MA_105,San Rafael del Sur,Managua,1
-MA_106,Managua,Managua,1466
-MA_106,Ciudad Sandino,Managua,159
-MA_106,Tipitapa,Managua,109
-MA_106,Nindirí,Masaya,4
+MA_105,Tipitapa,Managua,122
 MA_106,Granada,Granada,1
 MA_106,León,León,1
+MA_106,Ciudad Sandino,Managua,159
+MA_106,Managua,Managua,1466
 MA_106,San Francisco Libre,Managua,1
-MA_107,Managua,Managua,2377
-MA_107,Tipitapa,Managua,176
+MA_106,Tipitapa,Managua,109
+MA_106,Nindirí,Masaya,4
 MA_107,Ciudad Sandino,Managua,123
-MA_107,Ticuantepe,Managua,12
-MA_107,Tisma,Masaya,3
+MA_107,Managua,Managua,2377
 MA_107,Mateare,Managua,2
+MA_107,Ticuantepe,Managua,12
+MA_107,Tipitapa,Managua,176
+MA_107,Masaya,Masaya,1
+MA_107,Tisma,Masaya,3
 MA_107,Ciudad Darío,Matagalpa,1
 MA_107,El Almendro,Río San Juan,1
-MA_107,Masaya,Masaya,1
-MA_108,Managua,Managua,1660
-MA_108,Tipitapa,Managua,150
-MA_108,Ciudad Sandino,Managua,89
-MA_108,San Francisco Libre,Managua,1
 MA_108,San Marcos,Carazo,1
-MA_109,Managua,Managua,1770
-MA_109,Tipitapa,Managua,188
-MA_109,Ciudad Sandino,Managua,29
-MA_109,San Rafael del Sur,Managua,8
-MA_109,Mateare,Managua,3
-MA_109,Tipitapa,Masaya,3
-MA_109,Masaya,Managua,1
-MA_109,Masaya,Masaya,1
-MA_109,San Francisco Libre,Managua,1
+MA_108,Ciudad Sandino,Managua,89
+MA_108,Managua,Managua,1660
+MA_108,San Francisco Libre,Managua,1
+MA_108,Tipitapa,Managua,150
 MA_109,San Marcos,Carazo,1
-MA_109,San Rafael del Sur,Rivas,1
+MA_109,Ciudad Sandino,Managua,29
+MA_109,Managua,Managua,1770
+MA_109,Mateare,Managua,3
+MA_109,San Francisco Libre,Managua,1
+MA_109,San Rafael del Sur,Managua,9
 MA_109,Ticuantepe,Managua,1
-MA_110,Managua,Managua,2727
-MA_110,Tipitapa,Managua,142
-MA_110,Ticuantepe,Managua,56
-MA_110,Ciudad Sandino,Managua,22
-MA_110,La Concepción,Masaya,5
-MA_110,Mateare,Managua,2
-MA_110,El Tuma - La Dalia,Matagalpa,1
+MA_109,Tipitapa,Managua,191
+MA_109,Masaya,Masaya,2
 MA_110,Jinotepe,Carazo,1
 MA_110,La Paz de Carazo,Carazo,1
-MA_110,Masaya,Masaya,1
 MA_110,Nagarote,León,1
-MA_111,Managua,Managua,1182
-MA_111,Tipitapa,Managua,91
-MA_111,Mateare,Managua,2
+MA_110,Ciudad Sandino,Managua,22
+MA_110,Managua,Managua,2727
+MA_110,Mateare,Managua,2
+MA_110,Ticuantepe,Managua,56
+MA_110,Tipitapa,Managua,142
+MA_110,La Concepción,Masaya,5
+MA_110,Masaya,Masaya,1
+MA_110,El Tuma - La Dalia,Matagalpa,1
 MA_111,Ciudad Sandino,Managua,1
+MA_111,Managua,Managua,1182
+MA_111,Mateare,Managua,2
 MA_111,Ticuantepe,Managua,1
-MA_112,Managua,Managua,1008
-MA_112,Tipitapa,Managua,88
-MA_112,Ticuantepe,Managua,2
+MA_111,Tipitapa,Managua,91
 MA_112,Ciudad Sandino,Managua,1
-MERCADOS_01,Managua,Managua,651
-MERCADOS_01,León,León,95
-MERCADOS_01,Chinandega,Chinandega,41
-MERCADOS_01,Ciudad Sandino,Managua,15
+MA_112,Managua,Managua,1008
+MA_112,Ticuantepe,Managua,2
+MA_112,Tipitapa,Managua,88
 MERCADOS_01,Chichigalpa,Chinandega,7
-MERCADOS_01,El Viejo,Chinandega,7
+MERCADOS_01,Chinandega,Chinandega,41
 MERCADOS_01,Corinto,Chinandega,6
-MERCADOS_01,Managua,RACCN,4
-MERCADOS_01,La Paz Centro,León,2
-MERCADOS_01,Nagarote,León,2
-MERCADOS_01,Somotillo,Chinandega,2
-MERCADOS_01,Ticuantepe,Managua,2
-MERCADOS_01,La Concepción,Masaya,1
-MERCADOS_01,La Trinidad,RACCN,1
-MERCADOS_01,Mateare,Managua,1
+MERCADOS_01,El Viejo,Chinandega,7
 MERCADOS_01,Posoltega,Chinandega,1
-MERCADOS_01,San Ramón,Matagalpa,1
+MERCADOS_01,Somotillo,Chinandega,2
+MERCADOS_01,La Trinidad,Estelí,1
+MERCADOS_01,La Paz Centro,León,2
+MERCADOS_01,León,León,95
+MERCADOS_01,Nagarote,León,2
+MERCADOS_01,Ciudad Sandino,Managua,15
+MERCADOS_01,Managua,Managua,655
+MERCADOS_01,Mateare,Managua,1
+MERCADOS_01,Ticuantepe,Managua,2
 MERCADOS_01,Tipitapa,Managua,1
-MERCADOS_02,Managua,Managua,479
-MERCADOS_02,Tipitapa,Managua,69
+MERCADOS_01,La Concepción,Masaya,1
+MERCADOS_01,San Ramón,Matagalpa,1
 MERCADOS_02,Ciudad Sandino,Managua,68
+MERCADOS_02,Managua,Managua,481
 MERCADOS_02,Mateare,Managua,16
-MERCADOS_02,Ticuantepe,Managua,10
-MERCADOS_02,Managua,RACCN,2
-MERCADOS_02,Jalapa,Nueva Segovia,1
-MERCADOS_02,Matagalpa,RACCN,1
-MERCADOS_02,Río Blanco,RACCN,1
 MERCADOS_02,San Francisco Libre,Managua,1
 MERCADOS_02,San Rafael del Sur,Managua,1
-MERCADOS_03,Managua,Managua,141
-MERCADOS_03,Chinandega,Chinandega,4
-MERCADOS_03,Chichigalpa,Chinandega,1
-MERCADOS_03,Ciudad Sandino,Managua,1
-MERCADOS_03,San Marcos,Carazo,1
-MERCADOS_03,Ticuantepe,Managua,1
-MERCADOS_03,Wiwilí,Jinotega,1
-MY_101,Masaya,Masaya,1069
-MY_101,Granada,Granada,83
-MY_101,Nindirí,Masaya,50
-MY_101,Tisma,Masaya,31
-MY_101,Catarina,Masaya,24
-MY_101,Niquinohomo,Masaya,18
-MY_101,Managua,Managua,15
-MY_101,Masatepe,Masaya,14
-MY_101,Nandasmo,Masaya,13
-MY_101,Tipitapa,Managua,5
-MY_101,Diriá,Masaya,2
-MY_101,San Juan de Oriente,Masaya,2
-MY_101,San Marcos,Carazo,2
-MY_101,Ciudad Sandino,Managua,1
-MY_101,Diriomo,Masaya,1
-MY_101,Diriá,Granada,1
-MY_101,Masaya,Granada,1
-MY_101,Nindirí,Managua,1
-MY_101,San Rafael del Sur,Managua,1
-NORTE_01,Estelí,Estelí,263
-NORTE_01,Ocotal,Nueva Segovia,175
-NORTE_01,Jalapa,Nueva Segovia,85
-NORTE_01,Somoto,Madriz,70
-NORTE_01,San Juan de Río Coco,Madriz,40
-NORTE_01,El Jícaro,Nueva Segovia,35
+MERCADOS_02,Ticuantepe,Managua,10
+MERCADOS_02,Tipitapa,Managua,69
+MERCADOS_02,Matagalpa,Matagalpa,1
+MERCADOS_02,Río Blanco,Matagalpa,1
+MERCADOS_02,Jalapa,Nueva Segovia,1
+NORTE_01,Juigalpa,Chontales,1
 NORTE_01,Condega,Estelí,34
-NORTE_01,Palacagüina,Madriz,33
-NORTE_01,Pueblo Nuevo,Estelí,33
-NORTE_01,Quilalí,Nueva Segovia,30
+NORTE_01,Estelí,Estelí,263
 NORTE_01,La Trinidad,Estelí,28
-NORTE_01,Managua,Managua,19
-NORTE_01,Wiwilí,Nueva Segovia,14
-NORTE_01,San Isidro,Matagalpa,11
-NORTE_01,Telpaneca,Madriz,11
-NORTE_01,El Sauce,León,9
-NORTE_01,Totogalpa,Madriz,9
-NORTE_01,Wiwilí,Jinotega,8
-NORTE_01,Yalagüina,Madriz,7
-NORTE_01,Ciudad Antigua,Nueva Segovia,6
-NORTE_01,Murra,Nueva Segovia,5
-NORTE_01,San Fernando,Nueva Segovia,5
-NORTE_01,Mozonte,Nueva Segovia,4
-NORTE_01,Ciudad Sandino,Managua,3
-NORTE_01,San Isidro,Estelí,3
+NORTE_01,Pueblo Nuevo,Estelí,33
 NORTE_01,San Juan de Limay,Estelí,3
+NORTE_01,Wiwilí,Jinotega,0
+NORTE_01,El Sauce,León,9
 NORTE_01,León,León,2
-NORTE_01,Managua,Nueva Segovia,2
-NORTE_01,Juigalpa,Nueva Segovia,1
-NORTE_01,Managua,Estelí,1
-NORTE_01,Managua,Madriz,1
-NORTE_01,Ocotal,Estelí,1
-NORTE_01,San Juan de Río Coco,Nueva Segovia,1
+NORTE_01,Palacagüina,Madriz,33
+NORTE_01,San Juan de Río Coco,Madriz,41
+NORTE_01,Somoto,Madriz,70
+NORTE_01,Telpaneca,Madriz,11
+NORTE_01,Totogalpa,Madriz,9
+NORTE_01,Yalagüina,Madriz,8
+NORTE_01,Ciudad Sandino,Managua,3
+NORTE_01,Managua,Managua,23
 NORTE_01,Tipitapa,Managua,1
-NORTE_01,Yalagüina,Nueva Segovia,1
-NORTE_02,Matagalpa,Matagalpa,234
-NORTE_02,Jinotega,Jinotega,116
-NORTE_02,Sébaco,Matagalpa,96
-NORTE_02,Ciudad Darío,Matagalpa,92
-NORTE_02,El Tuma - La Dalia,Matagalpa,84
-NORTE_02,Waslala,RACCN,70
-NORTE_02,El Cuá,Jinotega,61
-NORTE_02,Esquipulas,Matagalpa,54
-NORTE_02,Santa María de Pantasma,Jinotega,53
-NORTE_02,San Sebastián de Yalí,Jinotega,38
-NORTE_02,San Ramón,Matagalpa,23
-NORTE_02,San Dionisio,Matagalpa,16
-NORTE_02,Rancho Grande,Matagalpa,15
-NORTE_02,Terrabona,Matagalpa,13
-NORTE_02,San Rafael del Norte,Jinotega,12
-NORTE_02,Wiwilí,Jinotega,12
-NORTE_02,San José de Bocay,Jinotega,11
+NORTE_01,San Isidro,Matagalpa,14
+NORTE_01,Ciudad Antigua,Nueva Segovia,6
+NORTE_01,El Jícaro,Nueva Segovia,35
+NORTE_01,Jalapa,Nueva Segovia,85
+NORTE_01,Mozonte,Nueva Segovia,4
+NORTE_01,Murra,Nueva Segovia,5
+NORTE_01,Ocotal,Nueva Segovia,176
+NORTE_01,Quilalí,Nueva Segovia,30
+NORTE_01,San Fernando,Nueva Segovia,5
+NORTE_01,Wiwilí,Nueva Segovia,0
 NORTE_02,San José de los Remates,Boaco,10
-NORTE_02,Siuna,RACCN,7
-NORTE_02,Waslala,Matagalpa,4
-NORTE_02,El Tuma - La Dalia,Jinotega,2
-NORTE_02,Jinotega,Matagalpa,1
-NORTE_02,Matagalpa,RACCN,1
+NORTE_02,El Cuá,Jinotega,61
+NORTE_02,Jinotega,Jinotega,117
+NORTE_02,San José de Bocay,Jinotega,11
+NORTE_02,San Rafael del Norte,Jinotega,12
+NORTE_02,San Sebastián de Yalí,Jinotega,38
+NORTE_02,Santa María de Pantasma,Jinotega,53
+NORTE_02,Wiwilí,Jinotega,0
+NORTE_02,Ciudad Darío,Matagalpa,92
+NORTE_02,El Tuma - La Dalia,Matagalpa,86
+NORTE_02,Esquipulas,Matagalpa,54
+NORTE_02,Matagalpa,Matagalpa,235
 NORTE_02,Matiguás,Matagalpa,1
 NORTE_02,Muy Muy,Matagalpa,1
+NORTE_02,Rancho Grande,Matagalpa,15
+NORTE_02,San Dionisio,Matagalpa,16
+NORTE_02,San Ramón,Matagalpa,23
+NORTE_02,Sébaco,Matagalpa,96
+NORTE_02,Terrabona,Matagalpa,13
 NORTE_02,Quilalí,Nueva Segovia,1
-OCCIDENTE_01,León,León,183
-OCCIDENTE_01,Chinandega,Chinandega,144
-OCCIDENTE_01,El Viejo,Chinandega,35
+NORTE_02,Siuna,RACCN,7
+NORTE_02,Waslala,RACCN,74
 OCCIDENTE_01,Chichigalpa,Chinandega,24
-OCCIDENTE_01,Somotillo,Chinandega,17
-OCCIDENTE_01,Achuapa,León,8
+OCCIDENTE_01,Chinandega,Chinandega,144
 OCCIDENTE_01,Corinto,Chinandega,8
+OCCIDENTE_01,El Realejo,Chinandega,2
+OCCIDENTE_01,El Viejo,Chinandega,35
+OCCIDENTE_01,Somotillo,Chinandega,17
+OCCIDENTE_01,Villanueva,Chinandega,2
+OCCIDENTE_01,Achuapa,León,8
 OCCIDENTE_01,El Sauce,León,7
-OCCIDENTE_01,Managua,Managua,5
 OCCIDENTE_01,La Paz Centro,León,4
 OCCIDENTE_01,Larreynaga,León,3
+OCCIDENTE_01,León,León,184
 OCCIDENTE_01,Nagarote,León,3
-OCCIDENTE_01,El Realejo,Chinandega,2
-OCCIDENTE_01,Telica,León,2
-OCCIDENTE_01,Villanueva,Chinandega,2
-OCCIDENTE_01,Ciudad Sandino,Managua,1
-OCCIDENTE_01,León,Chinandega,1
 OCCIDENTE_01,Quezalguaque,León,1
-OFICINA_01,Managua,Managua,610
-OFICINA_01,León,León,12
-OFICINA_01,Managua,Masaya,10
-OFICINA_01,Ciudad Sandino,Managua,8
-OFICINA_01,Matagalpa,Matagalpa,8
-OFICINA_01,Juigalpa,Chontales,6
-OFICINA_01,Managua,León,5
-OFICINA_01,Masaya,Masaya,5
-OFICINA_01,Chinandega,Chinandega,4
-OFICINA_01,Mateare,Managua,4
-OFICINA_01,Managua,Carazo,3
-OFICINA_01,San Francisco Libre,Managua,3
-OFICINA_01,Belén,Rivas,2
+OCCIDENTE_01,Telica,León,2
+OCCIDENTE_01,Ciudad Sandino,Managua,1
+OCCIDENTE_01,Managua,Managua,5
 OFICINA_01,Diriamba,Carazo,2
-OFICINA_01,El Viejo,Chinandega,2
-OFICINA_01,Granada,Granada,2
-OFICINA_01,Masatepe,Masaya,2
-OFICINA_01,Nindirí,Masaya,2
-OFICINA_01,Ocotal,Nueva Segovia,2
-OFICINA_01,San Rafael del Sur,Managua,2
-OFICINA_01,Santo Tomás,Chontales,2
-OFICINA_01,Villa Carlos Fonseca,Managua,2
-OFICINA_01,Catarina,Masaya,1
 OFICINA_01,Chichigalpa,Chinandega,1
-OFICINA_01,Corinto,Managua,1
-OFICINA_01,El Rama,RACCS,1
+OFICINA_01,Chinandega,Chinandega,4
+OFICINA_01,Corinto,Chinandega,1
+OFICINA_01,El Viejo,Chinandega,2
+OFICINA_01,Juigalpa,Chontales,6
+OFICINA_01,Santo Tomás,Chontales,2
 OFICINA_01,Estelí,Estelí,1
-OFICINA_01,La Paz Centro,León,1
-OFICINA_01,Larreynaga,Managua,1
-OFICINA_01,Managua,Matagalpa,1
-OFICINA_01,Managua,Nueva Segovia,1
-OFICINA_01,Managua,RACCN,1
-OFICINA_01,Managua,Rivas,1
-OFICINA_01,Managua,Río San Juan,1
-OFICINA_01,Nagarote,Managua,1
+OFICINA_01,Granada,Granada,2
 OFICINA_01,Nandaime,Granada,1
-OFICINA_01,San Ramón,Matagalpa,1
-OFICINA_01,Sébaco,Matagalpa,1
-OFICINA_01,Telica,Managua,1
+OFICINA_01,La Paz Centro,León,1
+OFICINA_01,Larreynaga,León,1
+OFICINA_01,León,León,12
+OFICINA_01,Nagarote,León,1
+OFICINA_01,Telica,León,1
+OFICINA_01,Ciudad Sandino,Managua,8
+OFICINA_01,Managua,Managua,634
+OFICINA_01,Mateare,Managua,4
+OFICINA_01,San Francisco Libre,Managua,3
+OFICINA_01,San Rafael del Sur,Managua,2
 OFICINA_01,Ticuantepe,Managua,1
 OFICINA_01,Tipitapa,Managua,1
+OFICINA_01,Villa Carlos Fonseca,Managua,2
+OFICINA_01,Catarina,Masaya,1
+OFICINA_01,Masatepe,Masaya,2
+OFICINA_01,Masaya,Masaya,5
+OFICINA_01,Nindirí,Masaya,2
+OFICINA_01,Matagalpa,Matagalpa,8
+OFICINA_01,San Ramón,Matagalpa,1
+OFICINA_01,Sébaco,Matagalpa,1
+OFICINA_01,Ocotal,Nueva Segovia,2
+OFICINA_01,El Rama,RACCS,1
+OFICINA_01,Belén,Rivas,2
 OFICINA_01,Tola,Rivas,1
-SUPER_01,Managua,Managua,45
-SUPER_01,Tipitapa,Managua,3
-SUPER_01,Ciudad Sandino,Managua,2
-SUPER_01,Ticuantepe,Managua,2
 SUPER_01,Granada,Granada,1
 SUPER_01,León,León,1
-SUPER_01,Managua,Rivas,1
+SUPER_01,Ciudad Sandino,Managua,2
+SUPER_01,Managua,Managua,46
 SUPER_01,Mateare,Managua,1
-SUPER_01,Nueva Guinea,RACCS,1
+SUPER_01,Ticuantepe,Managua,2
+SUPER_01,Tipitapa,Managua,3
 SUPER_01,San Ramón,Matagalpa,1
-SURORIENTE_02,Rivas,Rivas,196
-SURORIENTE_02,Nandaime,Granada,115
-SURORIENTE_02,Masaya,Masaya,107
-SURORIENTE_02,Jinotepe,Carazo,92
-SURORIENTE_02,Diriamba,Carazo,91
-SURORIENTE_02,San Juan del Sur,Rivas,91
-SURORIENTE_02,Diriomo,Granada,37
-SURORIENTE_02,Granada,Granada,33
-SURORIENTE_02,Catarina,Masaya,29
-SURORIENTE_02,Cárdenas,Rivas,28
-SURORIENTE_02,Masatepe,Masaya,28
-SURORIENTE_02,Belén,Rivas,23
-SURORIENTE_02,La Concepción,Masaya,23
-SURORIENTE_02,San Jorge,Rivas,23
-SURORIENTE_02,Tola,Rivas,22
-SURORIENTE_02,Moyogalpa,Rivas,17
-SURORIENTE_02,San Marcos,Masaya,17
-SURORIENTE_02,Potosí,Rivas,13
-SURORIENTE_02,San Marcos,Carazo,13
-SURORIENTE_02,San Juan de Oriente,Masaya,10
-SURORIENTE_02,Santa Teresa,Carazo,10
-SURORIENTE_02,Diriá,Granada,8
-SURORIENTE_02,Nindirí,Masaya,8
-SURORIENTE_02,Diriomo,Masaya,6
-SURORIENTE_02,Altagracia,Rivas,5
-SURORIENTE_02,Nandasmo,Masaya,4
-SURORIENTE_02,Niquinohomo,Masaya,3
-SURORIENTE_02,Buenos Aires,Rivas,2
-SURORIENTE_02,Managua,Managua,2
-SURORIENTE_02,Managua,Rivas,2
-SURORIENTE_02,Pueblo Nuevo,Rivas,2
-SURORIENTE_02,Belén,Masaya,1
-SURORIENTE_02,Catarina,Granada,1
-SURORIENTE_02,Diriamba,Managua,1
+SUPER_01,Nueva Guinea,RACCS,1
+SURORIENTE_02,Diriamba,Carazo,92
 SURORIENTE_02,Dolores,Carazo,1
-SURORIENTE_02,Managua,Carazo,1
-SURORIENTE_02,Masatepe,Carazo,1
-SURORIENTE_02,Nandaime,Carazo,1
-SURORIENTE_02,Nandaime,Rivas,1
+SURORIENTE_02,Jinotepe,Carazo,92
+SURORIENTE_02,San Marcos,Carazo,30
+SURORIENTE_02,Santa Teresa,Carazo,10
+SURORIENTE_02,Pueblo Nuevo,Estelí,2
+SURORIENTE_02,Diriomo,Granada,43
+SURORIENTE_02,Diriá,Granada,8
+SURORIENTE_02,Granada,Granada,33
+SURORIENTE_02,Nandaime,Granada,117
+SURORIENTE_02,Managua,Managua,5
+SURORIENTE_02,Catarina,Masaya,30
+SURORIENTE_02,La Concepción,Masaya,23
+SURORIENTE_02,Masatepe,Masaya,29
+SURORIENTE_02,Masaya,Masaya,107
+SURORIENTE_02,Nandasmo,Masaya,4
+SURORIENTE_02,Nindirí,Masaya,8
+SURORIENTE_02,Niquinohomo,Masaya,3
+SURORIENTE_02,San Juan de Oriente,Masaya,10
+SURORIENTE_02,Altagracia,Rivas,5
+SURORIENTE_02,Belén,Rivas,24
+SURORIENTE_02,Buenos Aires,Rivas,2
+SURORIENTE_02,Cárdenas,Rivas,28
+SURORIENTE_02,Moyogalpa,Rivas,17
+SURORIENTE_02,Potosí,Rivas,13
+SURORIENTE_02,Rivas,Rivas,196
+SURORIENTE_02,San Jorge,Rivas,23
+SURORIENTE_02,San Juan del Sur,Rivas,91
+SURORIENTE_02,Tola,Rivas,22

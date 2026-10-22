@@ -6,3 +6,4 @@ PINES_*.xlsx
 *.json
 Reporte_Precios_*.xlsx
 ~$*
+data/registro_export.csv
