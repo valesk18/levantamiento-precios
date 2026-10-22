@@ -146,7 +146,10 @@ def guardar_filas(filas: list[dict]) -> None:
             else:
                 raise RuntimeError("Los encabezados de Registro_Precios no coinciden con la app. "
                                    "Deben ser, en este orden: " + ", ".join(COLS_REGISTRO))
-        con_reintentos(lambda: ws.append_rows(nuevas.values.tolist(), value_input_option="USER_ENTERED"))
+        # INSERT_ROWS: inserta filas nuevas al final; nunca sobrescribe filas existentes
+        # (aunque la hoja tenga filtros o un rango de tabla que termine antes de los datos)
+        con_reintentos(lambda: ws.append_rows(nuevas.values.tolist(), value_input_option="USER_ENTERED",
+                                              insert_data_option="INSERT_ROWS", table_range="A1"))
     else:
         ruta = DATA_DIR / "Registro_Precios.csv"
         if ruta.exists():                           # migra un CSV con estructura anterior
