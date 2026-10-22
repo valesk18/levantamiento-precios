@@ -246,12 +246,27 @@ def zona_precio(fila) -> str:
 
 
 zona_ruta = zona_precio(fila_ruta)
-COL_PRECIO_ZONA = f"Precio_{zona_ruta}"
+# Palabras clave por zona: tolera encabezados combinados (Precio_NORTE_CENTRO) o con errores (OOCIDENTE)
+CLAVES_ZONA = {"MANAGUA": ["MANAGUA"], "CENTRO": ["CENTRO"], "NORTE": ["NORTE"],
+               "OCCIDENTE_SURORIENTE": ["CIDENTE", "SURORIENTE", "SUR_ORIENTE"]}
+
+
+def columna_zona(columnas, zona: str) -> str:
+    """Primera columna Precio_* de Maestro_SKU (distinta de Precio_Sugerido) que corresponde a la zona."""
+    claves = CLAVES_ZONA.get(zona, [zona])
+    for c in columnas:
+        cu = str(c).upper().replace(" ", "_")
+        if cu.startswith("PRECIO_") and cu != "PRECIO_SUGERIDO" and any(k in cu for k in claves):
+            return c
+    return ""
+
+
+COL_PRECIO_ZONA = columna_zona(m_sku.columns, zona_ruta)
 
 
 def precio_lista(s):
     """Precio SUPLISA de la zona (entrada del PDV para el SKU propio). Vacío si no está cargado."""
-    return num(str(s.get(COL_PRECIO_ZONA, "") or "").strip())
+    return num(str(s.get(COL_PRECIO_ZONA, "") or "").strip()) if COL_PRECIO_ZONA else None
 
 
 vend_nombre = fila_ruta["Etiqueta"]
