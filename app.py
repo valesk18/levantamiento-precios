@@ -361,14 +361,16 @@ def fila_producto(sku_id, tipo, prod_id, nombre, cont, um, orden, extra="", list
     ps = None if sin_exist else num(salida)
     c = num(cont)
     pu = round(ps / c, 4) if ps and c else None
-    pe_m = pe or lista                 # margen: entrada observada; si no hay, la de lista por zona
-    m_abs = round(ps - pe_m, 2) if ps and pe_m else None
-    m_pct = round((ps - pe_m) / ps * 100, 1) if ps and pe_m else None   # margen sobre precio de venta
+    # FANNY: si el vendedor no consigue la entrada, se guarda la de lista de la zona (y Precio_Entrada_Lista
+    # queda como respaldo para saber de dónde salió). Sin existencia = sin precios.
+    pe_final = pe if pe else (None if sin_exist else lista)
+    m_abs = round(ps - pe_final, 2) if ps and pe_final else None
+    m_pct = round((ps - pe_final) / ps * 100, 1) if ps and pe_final else None   # margen sobre precio de venta
     capturas.append(dict(SKU_ID=sku_id, Tipo=tipo, Producto_ID=prod_id, Comp_Orden=orden,
-                         Precio_Entrada=pe, Precio_Salida=ps, Margen_Abs=m_abs, Margen_Pct=m_pct,
+                         Precio_Entrada=pe_final, Precio_Salida=ps, Margen_Abs=m_abs, Margen_Pct=m_pct,
                          Contenido=cont, UM=um, Precio_UM=pu,
                          Disponible="No" if sin_exist else "Sí", Promo="Sí" if promo else "No",
-                         Sell_Out="", Precio_Entrada_Lista=lista, _texto=salida, _texto_e=entrada, _sin=sin_exist))
+                         Sell_Out="", Precio_Entrada_Lista=lista, _texto=salida, _texto_e=entrada, _sin=sin_exist, _pe_obs=pe))
     if m_pct is not None:
         st.caption(f"Margen PDV: C$ {m_abs:,.2f} · {m_pct:.1f}%" + ("" if pe else " (con precio de lista)"))
     return pu, promo
@@ -428,11 +430,11 @@ st.divider()
 errores = [f"{c['Producto_ID']}: '{c['_texto']}'" for c in capturas
            if c["_texto"] and not c["_sin"] and c["Precio_Salida"] is None]
 errores += [f"{c['Producto_ID']}: entrada '{c['_texto_e']}'" for c in capturas
-            if c["_texto_e"] and not c["_sin"] and c["Precio_Entrada"] is None]
+            if c["_texto_e"] and not c["_sin"] and c["_pe_obs"] is None]
 errores += [f"{c['Producto_ID']}: tiene entrada pero falta salida" for c in capturas
-            if c["Precio_Entrada"] and c["Precio_Salida"] is None and not c["_sin"]]
+            if c["_pe_obs"] and c["Precio_Salida"] is None and not c["_sin"]]
 errores += [f"{c['Producto_ID']}: entrada mayor que salida" for c in capturas
-            if c["Precio_Entrada"] and c["Precio_Salida"] and c["Precio_Entrada"] > c["Precio_Salida"]]
+            if c["_pe_obs"] and c["Precio_Salida"] and c["_pe_obs"] > c["Precio_Salida"]]
 # Propio sin precio ni marca de "sin existencia"
 faltan = [c["SKU_ID"] for c in capturas
           if c["Tipo"] == "Propio" and c["Precio_Salida"] is None and not c["_sin"]]

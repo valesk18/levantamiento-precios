@@ -1,6 +1,8 @@
 """
-Completa Precio_Entrada_Lista en Registro_Precios para los SKU propios (FANNY) que quedaron vacíos,
-usando el precio de lista de Maestro_SKU según la zona de la ruta. No toca ninguna otra columna.
+Para los SKU propios (FANNY) ya guardados en Registro_Precios:
+- completa Precio_Entrada_Lista con el precio de lista de Maestro_SKU según la zona de la ruta;
+- si Precio_Entrada está vacío (y hay existencia), lo llena con ese precio de lista y recalcula el margen.
+No toca Precio_Salida ni las filas de competencia.
 
 Uso (con valesK activo, dentro de precios_app):
     python rellenar_precio_lista.py
@@ -36,21 +38,40 @@ print("Columnas de precio por zona:", col_zona)
 ws = sh.worksheet("Registro_Precios")
 v = ws.get_all_values()
 enc, filas = v[0], v[1:]
-iR, iS, iT, iL = (enc.index(c) for c in ("Ruta", "SKU_ID", "Tipo", "Precio_Entrada_Lista"))
+ix = {c: enc.index(c) for c in ("Ruta", "SKU_ID", "Tipo", "Disponible", "Precio_Entrada", "Precio_Salida",
+                                 "Margen_Abs", "Margen_Pct", "Precio_Entrada_Lista")}
 
-lista = []
-llenadas = 0
+
+def num(x):
+    try:
+        return float(str(x).replace(",", "").strip())
+    except ValueError:
+        return None
+
+
+n_lista = n_entrada = 0
 for f in filas:
-    actual = f[iL] if len(f) > iL else ""
-    nuevo = actual
-    if f[iT] == "Propio" and not str(actual).strip():
-        zona = next((z for p, z in ZONAS if f[iR].upper().startswith(p)), "")
-        c = col_zona.get(zona, "")
-        p = next((str(s.get(c, "")).strip() for s in sku if s["SKU_ID"] == f[iS]), "") if c else ""
-        if p:
-            nuevo, llenadas = p, llenadas + 1
-    lista.append([nuevo])
+    f += [""] * (len(enc) - len(f))
+    if f[ix["Tipo"]] != "Propio":
+        continue
+    zona = next((z for p, z in ZONAS if f[ix["Ruta"]].upper().startswith(p)), "")
+    c = col_zona.get(zona, "")
+    p = next((str(s.get(c, "")).strip() for s in sku if s["SKU_ID"] == f[ix["SKU_ID"]]), "") if c else ""
+    if p and not f[ix["Precio_Entrada_Lista"]].strip():
+        f[ix["Precio_Entrada_Lista"]] = p
+        n_lista += 1
+    # Entrada vacía y producto con existencia -> se usa la de lista
+    if f[ix["Disponible"]] != "No" and not f[ix["Precio_Entrada"]].strip() and f[ix["Precio_Entrada_Lista"]].strip():
+        f[ix["Precio_Entrada"]] = f[ix["Precio_Entrada_Lista"]]
+        n_entrada += 1
+        pe, ps = num(f[ix["Precio_Entrada"]]), num(f[ix["Precio_Salida"]])
+        if pe and ps:
+            f[ix["Margen_Abs"]] = round(ps - pe, 2)
+            f[ix["Margen_Pct"]] = round((ps - pe) / ps * 100, 1)
 
-col = gspread.utils.rowcol_to_a1(1, iL + 1)[:-1]
-ws.update(range_name=f"{col}2:{col}{len(filas) + 1}", values=lista, value_input_option="USER_ENTERED")
-print(f"Precio_Entrada_Lista completado en {llenadas} filas FANNY.")
+for col in ("Precio_Entrada", "Margen_Abs", "Margen_Pct", "Precio_Entrada_Lista"):
+    L = gspread.utils.rowcol_to_a1(1, ix[col] + 1)[:-1]
+    ws.update(range_name=f"{L}2:{L}{len(filas) + 1}", values=[[f[ix[col]]] for f in filas],
+              value_input_option="USER_ENTERED")
+print(f"Precio_Entrada_Lista completado en {n_lista} filas FANNY.")
+print(f"Precio_Entrada tomado de la lista en {n_entrada} filas FANNY (márgenes recalculados).")
